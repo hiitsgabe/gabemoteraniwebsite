@@ -96,7 +96,7 @@ export function OrbitRotation({
             sizeClasses[size]
           )}
         >
-          <centerIcon.Icon className={cn(iconSizeClasses[size])} />
+          <centerIcon.Icon className={cn(iconSizeClasses[size], "text-white")} />
         </div>
 
         {/* Generate Orbits */}
@@ -128,7 +128,7 @@ export function OrbitRotation({
                   return (
                     <div
                       key={iconIdx}
-                      className="bg-background/80 border-border/50 absolute rounded-full border p-1 shadow-lg backdrop-blur-sm"
+                      className="bg-background/80 text-white border-border/50 absolute rounded-full border p-1 shadow-lg backdrop-blur-sm"
                       style={{
                         left: `${x}%`,
                         top: `${y}%`,

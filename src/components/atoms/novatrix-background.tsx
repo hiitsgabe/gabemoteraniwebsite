@@ -143,5 +143,5 @@ export default function Novatrix({
     }
   }, [color, speed, amplitude, mouseReact])
 
-  return <div ref={ctnDom} className="h-full w-full" {...rest} />
+  return <div ref={ctnDom} className="h-full w-full text-white" {...rest} />
 }

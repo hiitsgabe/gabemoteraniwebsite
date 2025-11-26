@@ -4,6 +4,7 @@ import { FadeText } from '@/components/atoms/fade-text'
 import Nav from '@/components/molecules/nav'
 import About from '@/components/organisms/about'
 import Stack from '@/components/organisms/stack'
+import Work from '@/components/organisms/work'
 
 function Home() {
     return (
@@ -21,9 +22,12 @@ function Home() {
                 </div>
                 <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-background pointer-events-none" />
             </div>
-            <section id="about" className="h-screen">
+            <section id="about">
                 <About />
                 <Stack />
+            </section>
+            <section id="work">
+                <Work />
             </section>
         </>
     )
