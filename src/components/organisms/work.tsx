@@ -11,7 +11,7 @@ function Work() {
             company: "Algoma University",
             location: "Toronto, Canada",
             description: "Responsible for the development team of Machine Learning and LLMs systems for research purposes. Led a team of developers to create a mobile web extension to improve accessibility in WCAG non compliance websites.",
-            technologies: ["Machine Learning", "LLMs", "Web Extensions", "WCAG", "Typescript", "Docker", "React"]
+            technologies: ["Machine Learning", "LLMs", "Web Extensions", "WCAG", "TypeScript", "Docker", "React"]
         },
         {
             dateRange: '2022-2025',
@@ -19,7 +19,7 @@ function Work() {
             company: "Zenvia (NASDAQ: ZENV)",
             location: "São Paulo, Brazil",
             description: "Responsible for the Core and Platform teams and products. Led two teams with 6 software engineers in each one. Led a team of developers to create innovative solutions using ChatGPT on the platform, resulting in a seamless user experience.",
-            technologies: ["ChatGPT", "Platform Engineering", "Team Leadership", "Typescript", "React", "Node.js", "Java", "Vue", "Svelte", "Microfrontends"]
+            technologies: ["ChatGPT", "Platform Engineering", "Team Leadership", "TypeScript", "React", "Node.js", "Java", "Vue", "Svelte", "Microfrontends"]
         },
         {
             dateRange: '2020-2022',
@@ -27,7 +27,7 @@ function Work() {
             company: "Pingback",
             location: "Belo Horizonte, Brazil",
             description: "Led a team of developers to create tools for reaching, engaging, and monetizing any community or audience using Javascript with Nodejs and Reactjs. Conceptualized and architected infrastructure solutions instrumental in meeting strategic goals organization-wide.",
-            technologies: ["Node.js", "React.js", "Typescript", "Infrastructure", "AWS", "Terraform", "TypeScript", "Docker", "Microfrontends", "Postgres"]
+            technologies: ["Node.js", "React.js", "Infrastructure", "AWS", "Terraform", "TypeScript", "Docker", "Microfrontends", "Postgres"]
         },
         {
             dateRange: '2019-2020',
@@ -35,7 +35,7 @@ function Work() {
             company: "Usabit",
             location: "Rio de Janeiro, Brazil",
             description: "Managed and led the development of the new investment app of Necton (Brazilian stockbroker). Investigated and provided solutions to critical system issues and addressed issues such as performance tuning.",
-            technologies: ["Mobile Development", "Performance Tuning", "Typescript", "React.js", "Angular", "Docker", "Ruby", "MySQL", "Postgres", "MongoDB"]
+            technologies: ["Mobile Development", "Performance Tuning", "TypeScript", "React.js", "Angular", "Docker", "Ruby", "MySQL", "Postgres", "MongoDB"]
         },
         {
             dateRange: '2016-2018',
