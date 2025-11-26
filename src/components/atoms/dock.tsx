@@ -37,6 +37,7 @@ type DockProps = {
 type DockItemProps = {
   className?: string;
   children: React.ReactNode;
+  onClick?: () => void;
 };
 type DockLabelProps = {
   className?: string;
@@ -115,7 +116,7 @@ function Dock({
         role='toolbar'
         aria-label='Application dock'
       >
-        <DockProvider value={{ mouseX, spring, distance, magnification }}>
+        <DockProvider value={{ mouseX, spring, distance, magnification, }}>
           {children}
         </DockProvider>
       </motion.div>
@@ -123,7 +124,7 @@ function Dock({
   );
 }
 
-function DockItem({ children, className }: DockItemProps) {
+function DockItem({ children, className, onClick }: DockItemProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   const { distance, magnification, mouseX, spring } = useDock();
@@ -155,6 +156,7 @@ function DockItem({ children, className }: DockItemProps) {
         'relative inline-flex items-center justify-center',
         className
       )}
+      onClick={onClick}
       tabIndex={0}
       role='button'
       aria-haspopup='true'

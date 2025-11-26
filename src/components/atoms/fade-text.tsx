@@ -97,8 +97,8 @@ export const FadeText: React.FC<FadeTextProps> = ({
   return (
     <motion.div
       initial="hidden"
-      animate="show"
-      viewport={{ once: true }}
+      whileInView="show"
+      viewport={{ once: false }}
       transition={{ delay: staggerDelay }}
     >
       <motion.h1

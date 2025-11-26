@@ -41,6 +41,22 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  @keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+    }
+  to {
+    transform: rotate(360deg);
+    }
+  }
+  @keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+    }
+  to {
+    transform: rotate(360deg);
+    }
+  }
 }
 
 :root {
