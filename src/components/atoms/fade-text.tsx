@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import React from "react"
-import clsx from "clsx"
-import { motion } from "motion/react"
+import React from "react";
+import clsx from "clsx";
+import { motion } from "motion/react";
 
-type FadeDirection = "in" | "up" | "down"
+type FadeDirection = "in" | "up" | "down";
 
 interface FadeTextProps {
-  text?: string
-  className?: string
-  direction?: FadeDirection
-  staggerDelay?: number
-  wordDelay?: number
+  text?: string;
+  className?: string;
+  direction?: FadeDirection;
+  staggerDelay?: number;
+  wordDelay?: number;
 }
 
 export const FadeText: React.FC<FadeTextProps> = ({
@@ -23,7 +23,7 @@ export const FadeText: React.FC<FadeTextProps> = ({
 }) => {
   // For "in" direction, we animate word by word
   if (direction === "in") {
-    const words = text.split(" ")
+    const words = text.split(" ");
 
     return (
       <motion.div
@@ -61,38 +61,38 @@ export const FadeText: React.FC<FadeTextProps> = ({
           ))}
         </motion.h1>
       </motion.div>
-    )
+    );
   }
 
   // For "up" and "down" directions, we animate the entire text
   const animationVariants =
     direction === "up"
       ? {
-        hidden: { opacity: 0, y: 20 },
-        show: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            type: "spring" as const,
-            stiffness: 100,
-            damping: 12,
-            duration: 0.8,
+          hidden: { opacity: 0, y: 20 },
+          show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring" as const,
+              stiffness: 100,
+              damping: 12,
+              duration: 0.8,
+            },
           },
-        },
-      }
+        }
       : {
-        hidden: { opacity: 0, y: -20 },
-        show: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            type: "spring" as const,
-            stiffness: 100,
-            damping: 12,
-            duration: 0.8,
+          hidden: { opacity: 0, y: -20 },
+          show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring" as const,
+              stiffness: 100,
+              damping: 12,
+              duration: 0.8,
+            },
           },
-        },
-      }
+        };
 
   return (
     <motion.div
@@ -114,5 +114,5 @@ export const FadeText: React.FC<FadeTextProps> = ({
         {text}
       </motion.h1>
     </motion.div>
-  )
-}
+  );
+};

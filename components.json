@@ -19,6 +19,7 @@
     "hooks": "@/hooks"
   },
   "registries": {
-    "@eldoraui": "https://www.eldoraui.site/r/{name}.json"
+    "@eldoraui": "https://www.eldoraui.site/r/{name}.json",
+    "@react-bits": "https://reactbits.dev/r/{name}.json"
   }
 }

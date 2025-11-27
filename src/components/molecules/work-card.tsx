@@ -1,117 +1,122 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React from 'react';
-import { motion } from 'motion/react';
-import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
+import React from "react";
+import { motion } from "motion/react";
+import { IconBrandGithub, IconExternalLink } from "@tabler/icons-react";
 import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
 } from "@/components/atoms/tooltip";
-import { getTechnologyIcon } from '@/lib/technology-icons';
+import { TechnologyIcon, SpotilightCard } from "@/components/atoms";
+import { FaGithub, FaLink } from "react-icons/fa";
+import { cn } from "@/lib/utils";
 
 interface WorkCardProps {
-    dateRange: string;
-    title: string;
-    company: string;
-    location: string;
-    description: string;
-    technologies?: string[];
-    githubUrl?: string;
-    liveUrl?: string;
+  dateRange: string;
+  title: string;
+  company: string;
+  location: string;
+  description: string;
+  technologies?: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  index: number;
+  imgPath: string;
 }
 
 export const WorkCard: React.FC<WorkCardProps> = ({
-    dateRange,
-    title,
-    company,
-    location,
-    description,
-    technologies = [],
-    githubUrl,
-    liveUrl,
+  dateRange,
+  title,
+  company,
+  location,
+  description,
+  technologies = [],
+  githubUrl,
+  imgPath,
+  liveUrl,
+  index = 1,
 }) => {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="group relative overflow-hidden rounded-2xl bg-neutral-900/50 border border-neutral-800 p-6 backdrop-blur-sm hover:border-neutral-700 transition-all duration-300"
+  const LINKS_CLASS =
+    "bg-gray-200 border rounded-full h-[50px] w-[50px] flex justify-center items-center cursor-pointer hover:bg-gray-300";
+  return (
+    <SpotilightCard>
+      <>
+        {/* Header */}
+        <div
+          className={cn(
+            "py-4 flex cursor mb-10",
+            index % 2 === 0 ? "justify-end" : "justify-start"
+          )}
         >
-            {/* Gradient overlay on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-            <div className="relative z-10">
-                {/* Header with date and links */}
-                <div className="flex items-start justify-between mb-4">
-                    <span className="text-sm text-neutral-400 font-mono">{dateRange}</span>
-                    <div className="flex gap-2">
-                        {githubUrl && (
-                            <a
-                                href={githubUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-2 rounded-lg bg-neutral-800/50 hover:bg-neutral-700 transition-colors"
-                                aria-label="View on GitHub"
-                            >
-                                <IconBrandGithub className="w-4 h-4 text-neutral-400" />
-                            </a>
-                        )}
-                        {liveUrl && (
-                            <a
-                                href={liveUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-2 rounded-lg bg-neutral-800/50 hover:bg-neutral-700 transition-colors"
-                                aria-label="View live demo"
-                            >
-                                <IconExternalLink className="w-4 h-4 text-neutral-400" />
-                            </a>
-                        )}
-                    </div>
-                </div>
-
-                {/* Title and Company */}
-                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
-                    {title}
-                </h3>
-                <p className="text-base text-neutral-300 mb-1">
-                    {company}
-                </p>
-                <p className="text-sm text-neutral-500 mb-4">
-                    {location}
-                </p>
-
-                {/* Description */}
-                <p className="text-neutral-400 leading-relaxed mb-6">
-                    {description}
-                </p>
-
-                {/* Technology Icons with Tooltips */}
-                {technologies.length > 0 && (
-                    <TooltipProvider>
-                        <div className="flex flex-wrap gap-3">
-                            {technologies.map((tech, index) => {
-                                const IconComponent = getTechnologyIcon(tech);
-                                return (
-                                    <Tooltip key={index} delayDuration={200}>
-                                        <TooltipTrigger asChild>
-                                            <div className="p-2 rounded-lg bg-neutral-800/80 border border-neutral-700 hover:bg-neutral-700 hover:border-neutral-600 transition-all cursor-pointer">
-                                                <IconComponent className="w-5 h-5 text-neutral-300" />
-                                            </div>
-                                        </TooltipTrigger>
-                                        <TooltipContent>
-                                            <p>{tech}</p>
-                                        </TooltipContent>
-                                    </Tooltip>
-                                );
-                            })}
-                        </div>
-                    </TooltipProvider>
-                )}
+          {liveUrl && (
+            <a
+              className={cn(LINKS_CLASS, "mr-4")}
+              href={liveUrl}
+              target="_blank"
+            >
+              <FaLink />
+            </a>
+          )}
+          {githubUrl && (
+            <a className={LINKS_CLASS} href={githubUrl} target="_blank">
+              <FaGithub />
+            </a>
+          )}
+        </div>
+        {/* Body */}
+        <div
+          className={cn(
+            "flex",
+            index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+          )}
+        >
+          {/* Description */}
+          <div className="flex-1">
+            <div>
+              <h4 className="font-display font-extrabold drop-shadow-sm text-5xl text-gray-200 leading-12! mb-10">
+                {title}
+              </h4>
+              <p className="font-display font-bold drop-shadow-sm text-xl text-gray-300">
+                {description}
+              </p>
             </div>
-        </motion.div>
-    );
+            <div
+              className={cn(
+                "flex items-center mt-10",
+                index % 2 === 0 ? "justify-start" : "justify-end"
+              )}
+            >
+              {technologies.map((technology, index) => (
+                <div className="text-white mr-2 text-2xl" key={index}>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <TechnologyIcon name={technology} />
+                    </TooltipTrigger>
+                    <TooltipContent className="max-w-64 text-pretty">
+                      {technology}
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Image */}
+          <div className="hidden flex-1 sm:flex md:flex lg:flex relative">
+            <img
+              className={cn(
+                "grayscale absolute -bottom-10 opacity-40 rounded-lg",
+                index % 2 === 0 ? "-right-10" : "-left-10",
+                "h-[300px]"
+              )}
+              src={imgPath}
+            ></img>
+          </div>
+        </div>
+      </>
+    </SpotilightCard>
+  );
 };

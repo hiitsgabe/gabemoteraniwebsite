@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 import {
   FaApple,
   FaAws,
@@ -12,29 +12,29 @@ import {
   FaNodeJs,
   FaReact,
   FaTwitter,
-} from "react-icons/fa"
+} from "react-icons/fa";
 import {
   SiFacebook,
   SiNextdotjs,
   SiRedux,
   SiTypescript,
   SiVercel,
-} from "react-icons/si"
+} from "react-icons/si";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 interface OrbitIcon {
-  Icon: React.ComponentType<{ className?: string }>
-  name?: string
+  Icon: React.ComponentType<{ className?: string }>;
+  name?: string;
 }
 
 interface OrbitRotationProps {
-  icons?: OrbitIcon[]
-  orbitCount?: number
-  orbitGap?: number
-  centerIcon?: OrbitIcon
-  className?: string
-  size?: "sm" | "md" | "lg"
+  icons?: OrbitIcon[];
+  orbitCount?: number;
+  orbitGap?: number;
+  centerIcon?: OrbitIcon;
+  className?: string;
+  size?: "sm" | "md" | "lg";
 }
 
 const defaultIcons: OrbitIcon[] = [
@@ -53,12 +53,12 @@ const defaultIcons: OrbitIcon[] = [
   { Icon: FaGoogle, name: "Google" },
   { Icon: FaApple, name: "Apple" },
   { Icon: SiFacebook, name: "Facebook" },
-]
+];
 
 const defaultCenterIcon: OrbitIcon = {
   Icon: FaReact,
   name: "React",
-}
+};
 
 export function OrbitRotation({
   icons = defaultIcons,
@@ -69,19 +69,19 @@ export function OrbitRotation({
   size = "md",
   ...props
 }: OrbitRotationProps) {
-  const iconsPerOrbit = Math.ceil(icons.length / orbitCount)
+  const iconsPerOrbit = Math.ceil(icons.length / orbitCount);
 
   const sizeClasses = {
     sm: "w-16 h-16",
     md: "w-24 h-24",
     lg: "w-32 h-32",
-  }
+  };
 
   const iconSizeClasses = {
     sm: "w-6 h-6",
     md: "w-8 h-8",
     lg: "w-10 h-10",
-  }
+  };
 
   return (
     <div
@@ -96,14 +96,16 @@ export function OrbitRotation({
             sizeClasses[size]
           )}
         >
-          <centerIcon.Icon className={cn(iconSizeClasses[size], "text-white")} />
+          <centerIcon.Icon
+            className={cn(iconSizeClasses[size], "text-white")}
+          />
         </div>
 
         {/* Generate Orbits */}
         {[...Array(orbitCount)].map((_, orbitIdx) => {
-          const orbitSize = `${8 + orbitGap * (orbitIdx + 1)}rem`
-          const angleStep = (2 * Math.PI) / iconsPerOrbit
-          const animationDuration = `${12 + orbitIdx * 6}s`
+          const orbitSize = `${8 + orbitGap * (orbitIdx + 1)}rem`;
+          const angleStep = (2 * Math.PI) / iconsPerOrbit;
+          const animationDuration = `${12 + orbitIdx * 6}s`;
 
           return (
             <div
@@ -121,9 +123,9 @@ export function OrbitRotation({
                   orbitIdx * iconsPerOrbit + iconsPerOrbit
                 )
                 .map((iconConfig, iconIdx) => {
-                  const angle = iconIdx * angleStep
-                  const x = 50 + 50 * Math.cos(angle)
-                  const y = 50 + 50 * Math.sin(angle)
+                  const angle = iconIdx * angleStep;
+                  const x = 50 + 50 * Math.cos(angle);
+                  const y = 50 + 50 * Math.sin(angle);
 
                   return (
                     <div
@@ -137,12 +139,12 @@ export function OrbitRotation({
                     >
                       <iconConfig.Icon className={cn(iconSizeClasses[size])} />
                     </div>
-                  )
+                  );
                 })}
             </div>
-          )
+          );
         })}
       </div>
     </div>
-  )
+  );
 }
