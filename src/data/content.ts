@@ -156,7 +156,7 @@ const ABOUT_CONTENT = {
   description2:
     "I have been working in tech since 2014, building and scaling impactful projects. As a serial entrepreneur, I am passionate about turning ideas into products and solving real customer problems.",
   description4:
-    "Throughout my career, I've had the privilege of working with incredible people. Together, we've achieved significant milestones, from scaling products to 10k+ users and coordinating enterprise micro-frontend architectures, to founding startups that raised thousands of users and millions in funding. I am a strong team player and believe collaboration is one of my greatest strengths.",
+    "Throughout my career, I've had the privilege of working with incredible people. Together, we've achieved significant milestones—from scaling products to 10k+ users and coordinating enterprise micro-frontend architectures, to founding startups that raised millions in funding. I am a strong team player and believe collaboration is one of my greatest strengths.",
 };
 
 const WORK_CONTENT = {
