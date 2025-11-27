@@ -64,7 +64,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   handle = "hiitsgabe",
   status = "Online",
   contactText = "Contact",
-  showUserInfo = true,
+  showUserInfo = false,
   onContactClick,
 }) => {
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -258,7 +258,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
       );
       const y = clamp(
         centerY +
-          (beta - ANIMATION_CONFIG.DEVICE_BETA_OFFSET) * mobileTiltSensitivity,
+        (beta - ANIMATION_CONFIG.DEVICE_BETA_OFFSET) * mobileTiltSensitivity,
         0,
         shell.clientHeight
       );
@@ -389,7 +389,6 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                     </div>
                     <div className="pc-user-text">
                       <div className="pc-handle">@{handle}</div>
-                      <div className="pc-status">{status}</div>
                     </div>
                   </div>
                   <button
