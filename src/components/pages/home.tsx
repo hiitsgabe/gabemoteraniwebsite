@@ -43,10 +43,10 @@ function Home() {
         <About />
         <Stack />
       </section>
-      <section className="w-full" id="work relative">
+      <section className="w-full" id="work">
         <Work />
       </section>
-      <section id="contact relative">
+      <section id="contact">
         <Contact />
       </section>
     </>
