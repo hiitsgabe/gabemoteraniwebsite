@@ -31,7 +31,7 @@ function contact() {
         handle="gabemoterani"
         status="Online"
         contactText="Contact Me"
-        avatarUrl="gab.webp"
+        avatarUrl="gabb.png"
         className="z-20"
         showUserInfo={true}
         enableTilt={true}
